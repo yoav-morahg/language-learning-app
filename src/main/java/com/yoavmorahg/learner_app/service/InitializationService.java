@@ -28,8 +28,8 @@ public class InitializationService {
     }
 
     public String loadAllData() throws IOException {
-//        loadAudioData();
-//        createCollections();
+        loadAudioData();
+        createCollections();
         return loadVocabData();
     }
 
