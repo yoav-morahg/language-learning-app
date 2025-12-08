@@ -53,8 +53,7 @@ public class WebSecurityConfig {
                                 SessionCreationPolicy.STATELESS)
                 )
                 .authorizeHttpRequests( a ->
-                        a.requestMatchers("/api/v1/auth/**", "/api/v1/welcome",
-                                "/api/v1/loader/loadAllData", "/api/v1/vocab/**", "/api/v1/audio/**").permitAll()
+                        a.requestMatchers("/api/v1/auth/**", "/api/v1/welcome").permitAll()
                                 .anyRequest().authenticated()
                 )
         ;

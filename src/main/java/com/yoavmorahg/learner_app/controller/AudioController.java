@@ -52,8 +52,8 @@ public class AudioController {
     }
 
     @GetMapping("/download/all")
-    public String downloadAllAudioFiles(String containingFolderPath) throws IOException {
-        return audioDataService.downloadAllAudioFiles(containingFolderPath);
+    public String downloadAllAudioFiles(@RequestParam String dirpath) throws IOException {
+        return audioDataService.downloadAllAudioFiles(dirpath);
     }
 
     @GetMapping("/download/{id}")

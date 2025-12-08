@@ -2,6 +2,7 @@ package com.yoavmorahg.learner_app.controller;
 
 
 import com.yoavmorahg.learner_app.Exception.VocabItemNotFoundException;
+import com.yoavmorahg.learner_app.entity.VocabCollection;
 import com.yoavmorahg.learner_app.entity.VocabItemDto;
 import com.yoavmorahg.learner_app.service.DataLoaderService;
 import com.yoavmorahg.learner_app.service.VocabService;
@@ -43,6 +44,11 @@ public class VocabController {
     @GetMapping("/random")
     public VocabItemDto getRandomTerm() {
         return vocabService.getRandomVocabTerm();
+    }
+
+    @GetMapping("/collections")
+    public List<VocabCollection> ListCollections(@RequestParam boolean loadTerms) {
+        return vocabService.listCollections(loadTerms);
     }
 
 }

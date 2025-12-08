@@ -46,7 +46,7 @@ public class AuthenticationController {
         return jwtUtils.generateToken(userDetails.getUsername());
     }
 
-    @PostMapping("signup")
+    @PostMapping("/signup")
     public String registerUser(@RequestBody User user) {
         if (userRepository.existsByUsername(user.getUsername())) {
             return "User already exists.";
