@@ -1,5 +1,7 @@
 package com.yoavmorahg.learner_app.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Setter;
@@ -33,14 +35,16 @@ public class VocabItem {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "audio_id", referencedColumnName = "id")
+    @JsonManagedReference
     private AudioData audioData;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "item_collection",
-            joinColumns = @JoinColumn(name = "collection_id"),
-            inverseJoinColumns = @JoinColumn(name = "item_id")
+            name = "vocab_collection_vocab_item",
+            joinColumns = @JoinColumn(name = "vocab_collection_id"),
+            inverseJoinColumns = @JoinColumn(name = "vocab_item_id")
     )
+    @JsonIgnore
     private Set<VocabCollection> collections = new HashSet<>();
 
     @Column(name="is_archived")

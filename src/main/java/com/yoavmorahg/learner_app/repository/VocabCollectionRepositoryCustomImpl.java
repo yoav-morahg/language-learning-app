@@ -3,6 +3,7 @@ package com.yoavmorahg.learner_app.repository;
 import com.yoavmorahg.learner_app.entity.VocabCollection;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -16,6 +17,8 @@ public class VocabCollectionRepositoryCustomImpl implements VocabCollectionRepos
 
     @Override
     public List<VocabCollection> findAllWithItems() {
-        return entityManager.createQuery("FROM VocabCollection").getResultList();
+        String hql = "SELECT vc FROM VocabCollection vc JOIN FETCH vc.vocabItems";
+//        return entityManager.createQuery("FROM VocabCollection").getResultList();
+        return entityManager.createQuery(hql, VocabCollection.class).getResultList();
     }
 }

@@ -1,5 +1,6 @@
 package com.yoavmorahg.learner_app.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Setter;
@@ -39,6 +40,7 @@ public class AudioData {
     private LocalDateTime updatedTs;
 
     @OneToOne(mappedBy = "audioData")
+    @JsonBackReference
     private VocabItem vocabItem;
 
 

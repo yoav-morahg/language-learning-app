@@ -1,5 +1,7 @@
 package com.yoavmorahg.learner_app.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -31,7 +33,7 @@ public class VocabCollection {
     @Column(name = "updated_ts")
     public LocalDateTime updatedTs;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "collections", fetch = FetchType.LAZY)
     private Set<VocabItem> vocabItems = new HashSet<>();
 
 

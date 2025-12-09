@@ -156,15 +156,7 @@ public class VocabService {
             return listCollections();
         }
         else {
-            List<VocabCollection> collections = listCollections();
-            for (int i = 0; i < collections.size(); i++) {
-                Optional<VocabCollection> curCollection = vocabCollectionRepository.findById(
-                        collections.get(i).getId());
-                if (curCollection.isPresent()) {
-                    System.out.println(curCollection.get().getVocabItems().size());
-                }
-            }
-            return collections;
+            return vocabCollectionCustomRepository.findAllWithItems();
         }
     }
 }
