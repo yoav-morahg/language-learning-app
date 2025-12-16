@@ -3,12 +3,12 @@ package com.yoavmorahg.learner_app.service;
 import com.yoavmorahg.learner_app.Exception.InvalidDataException;
 import com.yoavmorahg.learner_app.Exception.ResourceNotFoundException;
 import com.yoavmorahg.learner_app.Exception.VocabItemNotFoundException;
+import com.yoavmorahg.learner_app.entity.EnhancedVocabItem;
 import com.yoavmorahg.learner_app.entity.VocabCollection;
 import com.yoavmorahg.learner_app.entity.VocabItem;
 import com.yoavmorahg.learner_app.entity.VocabItemDto;
-import com.yoavmorahg.learner_app.repository.VocabCollectionRepository;
-import com.yoavmorahg.learner_app.repository.VocabCollectionRepositoryCustom;
-import com.yoavmorahg.learner_app.repository.VocabItemRepository;
+import com.yoavmorahg.learner_app.model.EnhancedVocabItemDto;
+import com.yoavmorahg.learner_app.repository.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.data.domain.Page;
@@ -27,6 +27,8 @@ public class VocabService {
     private final VocabItemRepository vocabItemRepository;
     private final VocabCollectionRepository vocabCollectionRepository;
     private final VocabCollectionRepositoryCustom vocabCollectionCustomRepository;
+    private final EnhancedVocabItemRepository enhancedVocabItemRepository;
+    private final EnhancedVocabItemRepositoryCustom enhancedVocabItemRepositoryCustom;
 
 
     @PersistenceContext
@@ -34,10 +36,15 @@ public class VocabService {
 
     public VocabService(VocabItemRepository vocabItemRepository,
                         VocabCollectionRepository vocabCollectionRepository,
-                        VocabCollectionRepositoryCustom vocabCollectionCustomRepository) {
+                        VocabCollectionRepositoryCustom vocabCollectionCustomRepository,
+                        EnhancedVocabItemRepository enhancedVocabItemRepository,
+                        EnhancedVocabItemRepositoryCustom enhancedVocabItemRepositoryCustom) {
         this.vocabItemRepository = vocabItemRepository;
         this.vocabCollectionRepository = vocabCollectionRepository;
         this.vocabCollectionCustomRepository = vocabCollectionCustomRepository;
+        this.enhancedVocabItemRepository = enhancedVocabItemRepository;
+        this.enhancedVocabItemRepositoryCustom = enhancedVocabItemRepositoryCustom;
+
     }
 
     public List<VocabItemDto> list() {
@@ -135,6 +142,48 @@ public class VocabService {
 
         throw new VocabItemNotFoundException();
     }
+
+    public EnhancedVocabItemDto getRandomEnhancedVocabTerm() throws VocabItemNotFoundException {
+//        Long qty = vocabItemRepository.count();
+        Long qty = enhancedVocabItemRepository.count();
+        int idx = (int)(Math.random() * qty);
+        Page<EnhancedVocabItem> vocabItemPage = enhancedVocabItemRepository.findAll(PageRequest.of(idx, 1));
+        List<EnhancedVocabItem> terms = vocabItemPage.getContent();
+        EnhancedVocabItem vi = null;
+        if (vocabItemPage.hasContent()) {
+            vi = vocabItemPage.getContent().get(0);
+            if (vi != null) {
+//                VocabItemDto dto = new VocabItemDto();
+//                dto.setId(vi.getId());
+//                dto.setSideA(vi.getSideA());
+//                dto.setSideB(vi.getSideB());
+//                if (vi.getAudioData() != null) {
+//                    dto.setAudioDataId(vi.getAudioData().getId());
+//                }
+//                return dto;
+                return enhancedVocabItemToDto(vi);
+            }
+        }
+
+        return null;
+
+    }
+
+    private EnhancedVocabItemDto enhancedVocabItemToDto(EnhancedVocabItem vocabItem) throws VocabItemNotFoundException {
+        EnhancedVocabItemDto vocabItemDto;
+        if (vocabItem != null) {
+            vocabItemDto = new EnhancedVocabItemDto( vocabItem.getId(), vocabItem.getEnTerm(), vocabItem.getPtTermMasculine(),
+                    vocabItem.getPtTermFeminine(), vocabItem.getTermType(), vocabItem.getVerbRule(),
+                    vocabItem.getGender(), vocabItem.getNotes());
+//            if (vocabItem.getAudioData() != null) {
+//                vocabItemDto.setAudioDataId(vocabItem.getAudioData().getId());
+//            }
+            return vocabItemDto;
+        }
+
+        throw new VocabItemNotFoundException();
+    }
+
 
 
     public VocabCollection createCollection(String name) throws InvalidDataException {

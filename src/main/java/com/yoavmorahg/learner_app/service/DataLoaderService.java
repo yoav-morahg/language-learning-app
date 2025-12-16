@@ -4,10 +4,9 @@ import com.yoavmorahg.learner_app.Exception.AudioDataNotFoundException;
 import com.yoavmorahg.learner_app.Exception.InvalidDataException;
 import com.yoavmorahg.learner_app.Exception.ResourceExistsException;
 import com.yoavmorahg.learner_app.Exception.ResourceNotFoundException;
-import com.yoavmorahg.learner_app.entity.AudioData;
-import com.yoavmorahg.learner_app.entity.VocabCollection;
-import com.yoavmorahg.learner_app.entity.VocabItem;
-import com.yoavmorahg.learner_app.entity.VocabItemDto;
+import com.yoavmorahg.learner_app.entity.*;
+import com.yoavmorahg.learner_app.model.EnhancedVocabItemDto;
+import com.yoavmorahg.learner_app.repository.EnhancedVocabItemRepository;
 import com.yoavmorahg.learner_app.repository.VocabItemRepository;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
@@ -36,13 +35,16 @@ public class DataLoaderService {
 
     private final AudioDataService audioDataService;
     private final VocabItemRepository vocabItemRepository;
+    private final EnhancedVocabItemRepository enhancedVocabItemRepository;
     private final VocabService vocabService;
 
     public DataLoaderService(AudioDataService audioDataService,
-                             VocabService vocabService, VocabItemRepository vocabItemRepositor)  {
+                             VocabService vocabService, VocabItemRepository vocabItemRepository,
+                             EnhancedVocabItemRepository enhancedVocabItemRepository)  {
         this.audioDataService = audioDataService;
         this.vocabService = vocabService;
-        this.vocabItemRepository = vocabItemRepositor;
+        this.vocabItemRepository = vocabItemRepository;
+        this.enhancedVocabItemRepository = enhancedVocabItemRepository;
 
     }
 
@@ -77,7 +79,8 @@ public class DataLoaderService {
                     int lastDot = filename.lastIndexOf(".");
                     String collection = filename.substring(0, lastDot);
                     try {
-                        String result = loadFromFile(path, collection);
+//                        String result = loadFromFile(path, collection);
+                        String result = loadEnhancedTermsFromFile(path);
                         builder.append(filename);
                         builder.append(": ");
                         builder.append(result);
@@ -254,6 +257,136 @@ public class DataLoaderService {
         } catch (FileNotFoundException ex) {
             throw new ResourceNotFoundException(ex.getMessage());
         }
+    }
+
+    public String loadEnhancedTermsFromFile(String filepath) throws ResourceNotFoundException, IOException {
+
+
+        /*
+        English	Portuguese (m)	Portuguese (f)	Type	Verb Rule	Gender	Notes	Collection
+         */
+
+        String resultMessage = "Loaded: %d  Skipped: %d Failed: ";
+
+        StringBuilder loadedLines = new StringBuilder();
+        StringBuilder skippedLines = new StringBuilder();
+        StringBuilder failedLines = new StringBuilder();
+
+        File input = readResourceAsFile(filepath);
+        int loaded = 0;
+        int skipped = 0;
+        int failed = 0;
+        try (Scanner reader = new Scanner(input)) {
+            // skip header line
+            reader.nextLine();
+            while (reader.hasNextLine()) {
+                String line = reader.nextLine();
+                if (line != "") {
+                    String[] terms = line.split(",");
+                    if (terms.length == 8) {
+                        try {
+                            EnhancedVocabItemDto dto = new EnhancedVocabItemDto();
+                            dto.setEnTerm(terms[0]);
+                            dto.setPtTermMasculine(terms[1]);
+                            dto.setPtTermFeminine(terms[2]);
+                            dto.setTermType(terms[3]);
+                            dto.setVerbRule(terms[4]);
+                            dto.setGender(terms[5]);
+                            dto.setNotes(terms[6]);
+
+                            //TODO
+//                            checkIfExists(dto.getSideA());
+
+                            String collection = terms[7];
+
+                            EnhancedVocabItem vocabItem = loadNewEnhancedVocabItem(dto, collection);
+                            if (vocabItem != null && vocabItem.getId() != null && vocabItem.getId() > 0) {
+                                loaded++;
+                                System.out.println("Saved: " + vocabItem);
+                                loadedLines.append(line);
+                                loadedLines.append(System.lineSeparator());
+                            } else {
+                                skipped++;
+                                skippedLines.append(line.substring(0, line.length() - 1));
+                                skippedLines.append(System.lineSeparator());
+                            }
+
+                        } catch (ResourceExistsException e) {
+                            skipped++;
+                            skippedLines.append(line.substring(0, line.length() - 1));
+                            skippedLines.append(System.lineSeparator());
+                        } catch (Exception ex) {
+                            System.out.println("Error loading term '" + terms[0] + "': " + ex.getMessage());
+                            failed++;
+                            failedLines.append(line.substring(0, line.length() - 1));
+                            failedLines.append(System.lineSeparator());
+                        }
+                    }
+                }
+            }
+            String stats = String.format(resultMessage, loaded, skipped, failed);
+            return createResultMessage(stats, loadedLines.toString(),
+                    skippedLines.toString(), failedLines.toString());
+        } catch (FileNotFoundException ex) {
+            throw new ResourceNotFoundException(ex.getMessage());
+        }
+    }
+
+    public EnhancedVocabItem loadNewEnhancedVocabItem(EnhancedVocabItemDto newItemDto,
+                                                      String collectionName) throws ResourceExistsException {
+
+        AudioData audioData = null;
+
+        //TODO
+//        checkIfExists(newItemDto.getSideA());
+
+//        try {
+//            audioData = audioDataService.getAudioDataForTerm(newItemDto.getSideB().toLowerCase());
+//        } catch (AudioDataNotFoundException e) {
+//            // Does not yet exist so create
+//            audioData =audioDataService.createAudioDataForTerm(newItemDto.getSideB());
+//        }
+
+//        EnhancedVocabItem newItem = new EnhancedVocabItem(newItemDto.getEnTerm(), newItemDto.getPtTermMasculine(), newItemDto.getPtTermFeminine(),
+//                newItemDto.getTermType(), newItemDto.getVerbRule(), newItemDto.getGender(), newItemDto.getNotes(), null);
+//        newItem.setAudioData(audioData);
+
+//
+//        VocabCollection collection = null;
+        /*
+        if (collectionName != null) {
+            try {
+                collection = vocabService.getCollectionByName(collectionName);
+            } catch (ResourceNotFoundException ex) {
+                System.out.println("Unable to find collection.");
+            }
+        }*/
+        /*
+        if (collectionName != null) {
+            try {
+                VocabCollection collection = vocabService.getCollectionByName(collectionName);
+                newItem.getCollections().add(collection);
+            } catch (ResourceNotFoundException ex) {
+                System.out.println("Unable to find collection.");
+            }
+        }
+        EnhancedVocabItem newItem = new EnhancedVocabItem(newItemDto.getEnTerm(), newItemDto.getPtTermMasculine(), newItemDto.getPtTermFeminine(),
+                newItemDto.getTermType(), newItemDto.getVerbRule(), newItemDto.getGender(), newItemDto.getNotes(), null);
+        newItem.getCollections().add(collection);*/
+
+
+        EnhancedVocabItem newItem =  new EnhancedVocabItem(newItemDto.getEnTerm(), newItemDto.getPtTermMasculine(), newItemDto.getPtTermFeminine(),
+                newItemDto.getTermType(), newItemDto.getVerbRule(), newItemDto.getGender(), newItemDto.getNotes(), null);
+//        newItem.setAudioData(audioData);
+//        if (collectionName != null) {
+//            try {
+//                VocabCollection collection = vocabService.getCollectionByName(collectionName);
+//                newItem.getCollections().add(collection);
+//            } catch (ResourceNotFoundException ex) {
+//                System.out.println("Unable to find collection.");
+//            }
+//        }
+        return enhancedVocabItemRepository.save(newItem);
     }
 
     private String createResultMessage(String resultMessage, String loadedLines,

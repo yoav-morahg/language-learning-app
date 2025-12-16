@@ -34,7 +34,7 @@ public class VocabCollection {
     public LocalDateTime updatedTs;
 
     @ManyToMany(mappedBy = "collections", fetch = FetchType.LAZY)
-    private Set<VocabItem> vocabItems = new HashSet<>();
+    private Set<EnhancedVocabItem> vocabItems = new HashSet<>();
 
 
     public Long getId() {
@@ -69,14 +69,13 @@ public class VocabCollection {
         this.updatedTs = updatedTs;
     }
 
-    public Set<VocabItem> getVocabItems() {
+    public Set<EnhancedVocabItem> getVocabItems() {
         return vocabItems;
     }
 
-    public void setVocabItems(Set<VocabItem> vocabItems) {
+    public void setVocabItems(Set<EnhancedVocabItem> vocabItems) {
         this.vocabItems = vocabItems;
     }
-
 
     @Override
     public boolean equals(Object o) {

@@ -1,2 +1,8 @@
 professions
 countries
+essential terms
+ar verbs
+er verbs
+irregular verbs
+nouns
+adjectives

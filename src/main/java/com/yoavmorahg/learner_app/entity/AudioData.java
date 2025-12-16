@@ -41,7 +41,7 @@ public class AudioData {
 
     @OneToOne(mappedBy = "audioData")
     @JsonBackReference
-    private VocabItem vocabItem;
+    private EnhancedVocabItem vocabItem;
 
 
     public Long getId() {
@@ -100,11 +100,11 @@ public class AudioData {
         this.updatedTs = updatedTs;
     }
 
-    public VocabItem getVocabItem() {
+    public EnhancedVocabItem getVocabItem() {
         return vocabItem;
     }
 
-    public void setVocabItem(VocabItem vocabItem) {
+    public void setVocabItem(EnhancedVocabItem vocabItem) {
         this.vocabItem = vocabItem;
     }
 }

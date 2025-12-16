@@ -27,8 +27,9 @@ public class InitializationService {
         this.dataLoaderService = dataLoaderService;
     }
 
+    //TODO collection mapping wrong
     public String loadAllData() throws IOException {
-        loadAudioData();
+//        loadAudioData();
         createCollections();
         return loadVocabData();
     }

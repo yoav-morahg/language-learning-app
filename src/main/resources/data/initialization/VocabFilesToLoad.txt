@@ -1,2 +1,1 @@
-professions.csv
-countries.csv
+Portuguese-A1-Terms-2025-12-15.csv

@@ -1,9 +1,11 @@
 package com.yoavmorahg.learner_app.controller;
 
 
+import com.yoavmorahg.learner_app.Exception.ResourceNotFoundException;
 import com.yoavmorahg.learner_app.Exception.VocabItemNotFoundException;
 import com.yoavmorahg.learner_app.entity.VocabCollection;
 import com.yoavmorahg.learner_app.entity.VocabItemDto;
+import com.yoavmorahg.learner_app.model.EnhancedVocabItemDto;
 import com.yoavmorahg.learner_app.service.DataLoaderService;
 import com.yoavmorahg.learner_app.service.VocabService;
 import org.springframework.http.HttpStatus;
@@ -40,10 +42,20 @@ public class VocabController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
     }
+//
+//    @GetMapping("/random")
+//    public VocabItemDto getRandomTerm() {
+//        return vocabService.getRandomVocabTerm();
+//    }
 
     @GetMapping("/random")
-    public VocabItemDto getRandomTerm() {
-        return vocabService.getRandomVocabTerm();
+    public EnhancedVocabItemDto getRandomTerm(@RequestParam(required = false) String omit,
+                                              @RequestParam(required = false) String filter) {
+        try {
+            return vocabService.getRandomEnhancedVocabTerm();
+        } catch (ResourceNotFoundException ex) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage());
+        }
     }
 
     @GetMapping("/collections")

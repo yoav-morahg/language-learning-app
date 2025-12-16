@@ -1,0 +1,110 @@
+English,Portuguese (m),Portuguese (f),Type,Verb Rule,Gender,Notes,Collection
+teacher,professor,professora,noun,,subject,,professions
+driver,motorista,,noun,,subject,,professions
+writer,escritor,escritora,noun,,subject,,professions
+architect,arquiteto,arquiteta,noun,,subject,,professions
+doctor,médico,médica,noun,,subject,,professions
+dentist,dentista,,noun,,subject,,professions
+hairdresser,cabeleireiro,cabeleireira,noun,,subject,,professions
+yoga instructor,instrutor de ioga,instrutora de ioga,noun,,subject,,professions
+pianist,pianista,,noun,,subject,,professions
+waiter,empregado de mesa,empregada de mesa,noun,,subject,,professions
+computer/software engineer,engenheiro de informático,engenheira de informático,noun,,subject,,professions
+nurse,enfermeiro,enfermeira,noun,,subject,,professions
+cook (noun),cozinheiro,cozinheira,noun,,subject,,professions
+florist,florista,,noun,,subject,,professions
+student,estudante,,noun,,subject,,professions
+taxi driver,taxista,,noun,,subject,,professions
+Belgium,Bélgica,,noun,,feminine,,countries
+Brazil,Brasil,,noun,,masculine,,countries
+Canada,Canadá,,noun,,masculine,,countries
+Cape Verde,Cabo Verde,,noun,,masculine,,countries
+Chile,Chile,,noun,,masculine,,countries
+China,China,,noun,,feminine,,countries
+Cyprus,Chipre,,noun,,masculine,,countries
+East Timor,Timor-Leste,,noun,,masculine,,countries
+England,Inglaterra,,noun,,(feminine),,countries
+France,França,,noun,,(feminine),,countries
+Germany,Alemanha,,noun,,feminine,,countries
+Great Britain,Grã-Bretanha,,noun,,feminine,,countries
+Greece,Grécia,,noun,,feminine,,countries
+Honduras,Honduras,,noun,,feminine,,countries
+Ireland,Irlanda,,noun,,feminine,,countries
+Italy,Italía,,noun,,(feminine),,countries
+Japan,Japão,,noun,,masculine,,countries
+Luxemburg,Luxemburgo,,noun,,masculine,,countries
+Mexico,México,,noun,,masculine,,countries
+Mozambique,Moçambique,,noun,,neutral,,countries
+Philippines,Filipinas,,noun,,feminine,,countries
+Portugal,Portugal,,noun,,neutral,,countries
+Qatar,Catar,,noun,,masculine,,countries
+Romania,Roménia,,noun,,feminine,,countries
+Russia,Rússia,,noun,,feminine,,countries
+Spain,Espanha,,noun,,(feminine),,countries
+Sweden,Suécia,,noun,,feminine,,countries
+Switzerland,Suiça,,noun,,feminine,,countries
+United Kingdom,Reino Unido,,noun,,masculine,,countries
+USA,Estados Unidos (da America),,noun,,masculine,,countries
+many,muinto,,,,,,essential terms
+few,poucos,,,,,,essential terms
+with,com,,,,,,essential terms
+without,sem,,,,,,essential terms
+both,ambos,,,,,,essential terms
+also,também,,,,,,essential terms
+speak,falar,,verb,ar,,,ar verbs
+learn,aprender,,verb,er,,,er verbs
+pay,pagar,,verb,ar,,,ar verbs
+write,escrever,,verb,er,,,er verbs
+buy,comprar,,verb,ar,,,ar verbs
+see,ver,,verb,irregular,,,irregular verbs
+sit,sentar,,verb,ar,,,ar verbs
+lay,deitar,,verb,ar,,,ar verbs
+drink,beber,,verb,er,,,er verbs
+swim,nadar,,verb,ar,,,ar verbs
+read,ler,,verb,irregular,,,irregular verbs
+smoke,fumar,,verb,ar,,,ar verbs
+dance,dançar,,verb,ar,,,ar verbs
+cook,cozinhar,,verb,ar,,,ar verbs
+eat,comer,,verb,er,,,er verbs
+sleep,dormir,,verb,ir,,,ir verbs
+book,livro,,noun,,masculine,,nouns
+month,mês,,noun,,masculine,,nouns
+man,homem,,noun,,masculine,,nouns
+newspaper,jornal,,noun,,masculine,,nouns
+lemon,limão,,noun,,masculine,,nouns
+paper,papel,,noun,,masculine,,nouns
+dog,cão,,noun,,masculine,,nouns
+key,chave,,noun,,masculine,,nouns
+blue,azul,,noun,,masculine,,nouns
+hand,mão,,noun,,masculine,,nouns
+boy,rapaz,,noun,,masculine,,nouns
+good,bom,,adjective,,,,adjectives
+good,boa,,adjective,,,,adjectives
+chair,cadeira,,noun,,feminine,,nouns
+play (meaning 1),brincar,,verb,ar,,,ar verbs
+play (meaning 2),tocar,,verb,ar,,,ar verbs
+"play (sports, etc.)",jogar,,verb,ar,,,ar verbs
+wash,lavar,,verb,ar,,,ar verbs
+clean,limpar,,verb,ar,,,ar verbs
+paint,pintar,,verb,ar,,,ar verbs
+bath,banho,,noun,,masculine,,nouns
+teeth,dentes,,noun,,masculine,,nouns
+bed,cama,,noun,,feminine,,nouns
+picture,quadro,,noun,,masculine,,nouns
+dishes,louça,,noun,,feminine,,nouns
+guitar,viola,,noun,,feminine,,nouns
+letter,carta,,noun,,feminine,,nouns
+tea,cha,,noun,,masculine,,nouns
+wall,parede,,noun,,feminine,,nouns
+celebrate (option 1),festejar,,verb,ar,,,ar verbs
+celebrate (option 2),celebrar,,verb,ar,,,ar verbs
+live,morar,,verb,ar,,,ar verbs
+teach,ensinar,,verb,ar,,,ar verbs
+like,gostar,,verb,ar,,,ar verbs
+play,jogar,,verb,ar,,,ar verbs
+get up,levantar,,verb,ar,,,ar verbs
+stay,ficar,,verb,ar,,,ar verbs
+use/wear,usar,,verb,ar,,,ar verbs
+pick up/catch,apanhar,,verb,ar,,,ar verbs
+start,começar,,verb,ar,,,ar verbs
+finish,acabar,,verb,ar,,,ar verbs
