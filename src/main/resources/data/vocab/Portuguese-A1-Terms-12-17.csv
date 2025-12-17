@@ -1,0 +1,157 @@
+English,Portuguese (m),Portuguese (f),Type,Verb Rule,Gender,Notes,Collection
+teacher,professor,professora,noun,,subject,,professions
+driver,motorista,,noun,,subject,,professions
+writer,escritor,escritora,noun,,subject,,professions
+architect,arquiteto,arquiteta,noun,,subject,,professions
+doctor,médico,médica,noun,,subject,,professions
+dentist,dentista,,noun,,subject,,professions
+hairdresser,cabeleireiro,cabeleireira,noun,,subject,,professions
+yoga instructor,instrutor de ioga,instrutora de ioga,noun,,subject,,professions
+pianist,pianista,,noun,,subject,,professions
+waiter,empregado de mesa,empregada de mesa,noun,,subject,,professions
+computer/software engineer,engenheiro de informático,engenheira de informático,noun,,subject,,professions
+nurse,enfermeiro,enfermeira,noun,,subject,,professions
+cook (noun),cozinheiro,cozinheira,noun,,subject,,professions
+florist,florista,,noun,,subject,,professions
+student,estudante,,noun,,subject,,professions
+taxi driver,taxista,,noun,,subject,,professions
+Belgium,Bélgica,,country,,feminine,,countries
+Brazil,Brasil,,country,,masculine,,countries
+Canada,Canadá,,country,,masculine,,countries
+Cape Verde,Cabo Verde,,country,,masculine,,countries
+Chile,Chile,,country,,masculine,,countries
+China,China,,country,,feminine,,countries
+Cyprus,Chipre,,country,,masculine,,countries
+East Timor,Timor-Leste,,country,,masculine,,countries
+England,Inglaterra,,country,,(feminine),,countries
+France,França,,country,,(feminine),,countries
+Germany,Alemanha,,country,,feminine,,countries
+Great Britain,Grã-Bretanha,,country,,feminine,,countries
+Greece,Grécia,,country,,feminine,,countries
+Honduras,Honduras,,country,,feminine,,countries
+Ireland,Irlanda,,country,,feminine,,countries
+Italy,Italía,,country,,(feminine),,countries
+Japan,Japão,,country,,masculine,,countries
+Luxemburg,Luxemburgo,,country,,masculine,,countries
+Mexico,México,,country,,masculine,,countries
+Mozambique,Moçambique,,country,,neutral,,countries
+Philippines,Filipinas,,country,,feminine,,countries
+Portugal,Portugal,,country,,neutral,,countries
+Qatar,Catar,,country,,masculine,,countries
+Romania,Roménia,,country,,feminine,,countries
+Russia,Rússia,,country,,feminine,,countries
+Spain,Espanha,,country,,(feminine),,countries
+Sweden,Suécia,,country,,feminine,,countries
+Switzerland,Suiça,,country,,feminine,,countries
+United Kingdom,Reino Unido,,country,,masculine,,countries
+USA,Estados Unidos (da America),,country,,masculine,,countries
+many,muinto,,,,,,essential terms
+few,poucos,,,,,,essential terms
+with,com,,,,,,essential terms
+without,sem,,,,,,essential terms
+both,ambos,,,,,,essential terms
+also,também,,,,,,essential terms
+speak,falar,,verb,ar,,,ar verbs
+learn,aprender,,verb,er,,,er verbs
+pay,pagar,,verb,ar,,,ar verbs
+write,escrever,,verb,er,,,er verbs
+buy,comprar,,verb,ar,,,ar verbs
+see,ver,,verb,irregular,,,irregular verbs
+sit,sentar,,verb,ar,,,ar verbs
+lay,deitar,,verb,ar,,,ar verbs
+drink,beber,,verb,er,,,er verbs
+swim,nadar,,verb,ar,,,ar verbs
+read,ler,,verb,irregular,,,irregular verbs
+smoke,fumar,,verb,ar,,,ar verbs
+dance,dançar,,verb,ar,,,ar verbs
+cook,cozinhar,,verb,ar,,,ar verbs
+eat,comer,,verb,er,,,er verbs
+sleep,dormir,,verb,ir,,,ir verbs
+book,livro,,noun,,masculine,,nouns
+month,mês,,noun,,masculine,,nouns
+man,homem,,noun,,masculine,,nouns
+newspaper,jornal,,noun,,masculine,,nouns
+lemon,limão,,noun,,masculine,,nouns
+paper,papel,,noun,,masculine,,nouns
+dog,cão,,noun,,masculine,,nouns
+key,chave,,noun,,masculine,,nouns
+blue,azul,,noun,,masculine,,nouns
+hand,mão,,noun,,masculine,,nouns
+boy,rapaz,,noun,,masculine,,nouns
+good,bom,boa,adjective,,,,adjectives
+chair,cadeira,,noun,,feminine,,nouns
+play (kids),brincar,,verb,ar,,,ar verbs
+play (music),tocar,,verb,ar,,,ar verbs
+"play (sports, etc.)",jogar,,verb,ar,,,ar verbs
+wash,lavar,,verb,ar,,,ar verbs
+clean,limpar,,verb,ar,,,ar verbs
+paint,pintar,,verb,ar,,,ar verbs
+bath,banho,,noun,,masculine,,nouns
+teeth,dentes,,noun,,masculine,,nouns
+bed,cama,,noun,,feminine,,nouns
+picture,quadro,,noun,,masculine,,nouns
+dishes,louça,,noun,,feminine,,nouns
+guitar,viola,,noun,,feminine,,nouns
+letter,carta,,noun,,feminine,,nouns
+tea,chá,,noun,,masculine,,nouns
+wall,parede,,noun,,feminine,,nouns
+celebrate (option 1),festejar,,verb,ar,,,ar verbs
+celebrate (option 2),celebrar,,verb,ar,,,ar verbs
+live,morar,,verb,ar,,,ar verbs
+teach,ensinar,,verb,ar,,,ar verbs
+like,gostar,,verb,ar,,,ar verbs
+play,jogar,,verb,ar,,,ar verbs
+get up,levantar,,verb,ar,,,ar verbs
+stay,ficar,,verb,ar,,,ar verbs
+use/wear,usar,,verb,ar,,,ar verbs
+pick up/catch,apanhar,,verb,ar,,,ar verbs
+start,começar,,verb,ar,,,ar verbs
+finish,acabar,,verb,ar,,,ar verbs
+open,aberto,aberta,adjective,,,,adjectives
+closed,fechado,fachada,adjective,,,,adjectives
+full,cheio,cheia,adjective,,,,adjectives
+empty,vazio,vazia,adjective,,,,adjectives
+on (tv),ligado,ligada,adjective,,,,adjectives
+off (tv),desligado,desligada,adjective,,,,adjectives
+on (light),aceso,acesa,adjective,,,,adjectives
+off (light),apagado,apagada,adjective,,,,adjectives
+dirty,sujo,suja,adjective,,,,adjectives
+dry,seco,seca,adjective,,,,adjectives
+wet,molahdo,molahda,adjective,,,,adjectives
+hungry,com fome,,adjective,,,,adjectives
+thirsty,com sede,,adjective,,,,adjectives
+cold,frio,fria,adjective,,,,adjectives
+hot,calor,calora,adjective,,,,adjectives
+happy (meaning 1),contente,,adjective,,,,adjectives
+sad,triste,,adjective,,,,adjectives
+tired,cansado,cansada,adjective,,,,adjectives
+sick,doente,,adjective,,,,adjectives
+big,grande,,adjective,,,,adjectives
+old ,velho,velha,adjective,,,,adjectives
+strong,forte,,adjective,,,,adjectives
+weak,fraco,fraca,adjective,,,,adjectives
+fat,gordo,gorda,adjective,,,,adjectives
+long,comprido,comprida,adjective,,,,adjectives
+short (objects),curto,curta,adjective,,,,adjectives
+tall  (people / buildings),alto,alta,adjective,,,,adjectives
+short (people / buildings),baixo,baixo,adjective,,,,adjectives
+ugly,feio,feia,adjective,,,,adjectives
+happy (meaning 2),feliz,,adjective,,,,adjectives
+horrible,horrível,,adjective,,,,adjectives
+cheap,barato,barata,adjective,,,,adjectives
+rich,rico,rica,adjective,,,,adjectives
+expensive,caro,cara,adjective,,,,adjectives
+Portugal (nacionalidade),português,portuguesa ,nationality,,,,nationalities
+Espanha (nacionalidade),espanhol,espanhola,nationality,,,,nationalities
+(a) França  (nacionalidade),francês,frances,nationality,,,,nationalities
+Italía (nacionalidades) (nacionalidade),italianio,intaliana,nationality,,,,nationalities
+(a) Inglaterra  (nacionalidade),inglês,inglesa,nationality,,,,nationalities
+a Grã-Bretanha  (nacionalidade),britânico,britânica,nationality,,,,nationalities
+os Estados Unidos  (nacionalidade),americano,amercana,nationality,,,,nationalities
+a alemahna  (nacionalidade),almão,alamã,nationality,,,,nationalities
+o Japão  (nacionalidade),japonês,japonesa,nationality,,,,nationalities
+a Bélgica  (nacionalidade),belga,belga,nationality,,,,nationalities
+o Canada  (nacionalidade),canadiano,canadiana,nationality,,,,nationalities
+o Brasil  (nacionalidade),brasileiro,brasileira,nationality,,,,nationalities
+a Suiça  (nacionalidade),suíço,suíça,nationality,,,,nationalities
+a Suécia  (nacionalidade),sueco,sueca,nationality,,,,nationalities

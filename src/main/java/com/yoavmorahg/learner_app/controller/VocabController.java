@@ -49,10 +49,9 @@ public class VocabController {
 //    }
 
     @GetMapping("/random")
-    public EnhancedVocabItemDto getRandomTerm(@RequestParam(required = false) String omit,
-                                              @RequestParam(required = false) String filter) {
+    public EnhancedVocabItemDto getRandomTerm(@RequestParam(required = false) String typeFilter) {
         try {
-            return vocabService.getRandomEnhancedVocabTerm();
+            return vocabService.getRandomEnhancedVocabTerm(typeFilter);
         } catch (ResourceNotFoundException ex) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage());
         }
@@ -61,6 +60,15 @@ public class VocabController {
     @GetMapping("/collections")
     public List<VocabCollection> ListCollections(@RequestParam boolean loadTerms) {
         return vocabService.listCollections(loadTerms);
+    }
+
+    @GetMapping("/testrandom")
+    public EnhancedVocabItemDto test(@RequestParam(required = false) String typeFilter ) {
+        try {
+            return vocabService.testRandom(typeFilter);
+        } catch (VocabItemNotFoundException ex) {
+            return null;
+        }
     }
 
 }

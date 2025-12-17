@@ -15,36 +15,36 @@ cook (noun),cozinheiro,cozinheira,noun,,subject,,professions
 florist,florista,,noun,,subject,,professions
 student,estudante,,noun,,subject,,professions
 taxi driver,taxista,,noun,,subject,,professions
-Belgium,Bélgica,,country,,feminine,,countries
-Brazil,Brasil,,country,,masculine,,countries
-Canada,Canadá,,country,,masculine,,countries
-Cape Verde,Cabo Verde,,country,,masculine,,countries
-Chile,Chile,,country,,masculine,,countries
-China,China,,country,,feminine,,countries
-Cyprus,Chipre,,country,,masculine,,countries
-East Timor,Timor-Leste,,country,,masculine,,countries
-England,Inglaterra,,country,,(feminine),,countries
-France,França,,country,,(feminine),,countries
-Germany,Alemanha,,country,,feminine,,countries
-Great Britain,Grã-Bretanha,,country,,feminine,,countries
-Greece,Grécia,,country,,feminine,,countries
-Honduras,Honduras,,country,,feminine,,countries
-Ireland,Irlanda,,country,,feminine,,countries
-Italy,Italía,,country,,(feminine),,countries
-Japan,Japão,,country,,masculine,,countries
-Luxemburg,Luxemburgo,,country,,masculine,,countries
-Mexico,México,,country,,masculine,,countries
-Mozambique,Moçambique,,country,,neutral,,countries
-Philippines,Filipinas,,country,,feminine,,countries
-Portugal,Portugal,,country,,neutral,,countries
-Qatar,Catar,,country,,masculine,,countries
-Romania,Roménia,,country,,feminine,,countries
-Russia,Rússia,,country,,feminine,,countries
-Spain,Espanha,,country,,(feminine),,countries
-Sweden,Suécia,,country,,feminine,,countries
-Switzerland,Suiça,,country,,feminine,,countries
-United Kingdom,Reino Unido,,country,,masculine,,countries
-USA,Estados Unidos (da America),,country,,masculine,,countries
+Belgium,Bélgica,,noun,,feminine,,countries
+Brazil,Brasil,,noun,,masculine,,countries
+Canada,Canadá,,noun,,masculine,,countries
+Cape Verde,Cabo Verde,,noun,,masculine,,countries
+Chile,Chile,,noun,,masculine,,countries
+China,China,,noun,,feminine,,countries
+Cyprus,Chipre,,noun,,masculine,,countries
+East Timor,Timor-Leste,,noun,,masculine,,countries
+England,Inglaterra,,noun,,(feminine),,countries
+France,França,,noun,,(feminine),,countries
+Germany,Alemanha,,noun,,feminine,,countries
+Great Britain,Grã-Bretanha,,noun,,feminine,,countries
+Greece,Grécia,,noun,,feminine,,countries
+Honduras,Honduras,,noun,,feminine,,countries
+Ireland,Irlanda,,noun,,feminine,,countries
+Italy,Italía,,noun,,(feminine),,countries
+Japan,Japão,,noun,,masculine,,countries
+Luxemburg,Luxemburgo,,noun,,masculine,,countries
+Mexico,México,,noun,,masculine,,countries
+Mozambique,Moçambique,,noun,,neutral,,countries
+Philippines,Filipinas,,noun,,feminine,,countries
+Portugal,Portugal,,noun,,neutral,,countries
+Qatar,Catar,,noun,,masculine,,countries
+Romania,Roménia,,noun,,feminine,,countries
+Russia,Rússia,,noun,,feminine,,countries
+Spain,Espanha,,noun,,(feminine),,countries
+Sweden,Suécia,,noun,,feminine,,countries
+Switzerland,Suiça,,noun,,feminine,,countries
+United Kingdom,Reino Unido,,noun,,masculine,,countries
+USA,Estados Unidos (da America),,noun,,masculine,,countries
 many,muinto,,,,,,essential terms
 few,poucos,,,,,,essential terms
 with,com,,,,,,essential terms
@@ -129,7 +129,7 @@ sick,doente,,adjective,,,,adjectives
 big,grande,,adjective,,,,adjectives
 old ,velho,velha,adjective,,,,adjectives
 strong,forte,,adjective,,,,adjectives
-weak,fraco,fraca,adjective,,,,adjectives
+weak,farco,fraca,adjective,,,,adjectives
 fat,gordo,gorda,adjective,,,,adjectives
 long,comprido,comprida,adjective,,,,adjectives
 short (objects),curto,curta,adjective,,,,adjectives
@@ -141,17 +141,3 @@ horrible,horrível,,adjective,,,,adjectives
 cheap,barato,barata,adjective,,,,adjectives
 rich,rico,rica,adjective,,,,adjectives
 expensive,caro,cara,adjective,,,,adjectives
-Portugal (nacionalidade),português,portuguesa ,nationality,,,,nationalities
-Espanha (nacionalidade),espanhol,espanhola,nationality,,,,nationalities
-(a) França  (nacionalidade),francês,frances,nationality,,,,nationalities
-Italía (nacionalidades) (nacionalidade),italianio,intaliana,nationality,,,,nationalities
-(a) Inglaterra  (nacionalidade),inglês,inglesa,nationality,,,,nationalities
-a Grã-Bretanha  (nacionalidade),britânico,britânica,nationality,,,,nationalities
-os Estados Unidos  (nacionalidade),americano,amercana,nationality,,,,nationalities
-a alemahna  (nacionalidade),almão,alamã,nationality,,,,nationalities
-o Japão  (nacionalidade),japonês,japonesa,nationality,,,,nationalities
-a Bélgica  (nacionalidade),belga,belga,nationality,,,,nationalities
-o Canada  (nacionalidade),canadiano,canadiana,nationality,,,,nationalities
-o Brasil  (nacionalidade),brasileiro,brasileira,nationality,,,,nationalities
-a Suiça  (nacionalidade),suíço,suíça,nationality,,,,nationalities
-a Suécia  (nacionalidade),sueco,sueca,nationality,,,,nationalities

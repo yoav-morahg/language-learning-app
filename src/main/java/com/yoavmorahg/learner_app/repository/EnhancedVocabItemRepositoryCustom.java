@@ -9,5 +9,7 @@ public interface EnhancedVocabItemRepositoryCustom {
 
     List<EnhancedVocabItem> getRandomTerms(Integer maxTerms);
 
+    EnhancedVocabItem getRandomTerm(String typeFilter);
+
 //    EnhancedVocabItem getRandomWithFilters(String omit, String filter);
 }

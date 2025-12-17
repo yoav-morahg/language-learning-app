@@ -151,7 +151,7 @@ public class VocabService {
         List<EnhancedVocabItem> terms = vocabItemPage.getContent();
         EnhancedVocabItem vi = null;
         if (vocabItemPage.hasContent()) {
-            vi = vocabItemPage.getContent().get(0);
+//            vi = vocabItemPage.getContent().get(0);
             if (vi != null) {
 //                VocabItemDto dto = new VocabItemDto();
 //                dto.setId(vi.getId());
@@ -207,5 +207,15 @@ public class VocabService {
         else {
             return vocabCollectionCustomRepository.findAllWithItems();
         }
+    }
+
+    public EnhancedVocabItemDto getRandomEnhancedVocabTerm(String typeFilter) throws VocabItemNotFoundException {
+        EnhancedVocabItem item = enhancedVocabItemRepositoryCustom.getRandomTerm(typeFilter);
+        return enhancedVocabItemToDto(item);
+    }
+
+    public EnhancedVocabItemDto testRandom(String typeFilter) throws VocabItemNotFoundException {
+        EnhancedVocabItem item = enhancedVocabItemRepositoryCustom.getRandomTerm(typeFilter);
+        return enhancedVocabItemToDto(item);
     }
 }
