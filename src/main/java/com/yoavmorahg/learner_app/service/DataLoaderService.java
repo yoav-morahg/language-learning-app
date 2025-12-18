@@ -378,14 +378,17 @@ public class DataLoaderService {
         EnhancedVocabItem newItem =  new EnhancedVocabItem(newItemDto.getEnTerm(), newItemDto.getPtTermMasculine(), newItemDto.getPtTermFeminine(),
                 newItemDto.getTermType(), newItemDto.getVerbRule(), newItemDto.getGender(), newItemDto.getNotes(), null);
 //        newItem.setAudioData(audioData);
-//        if (collectionName != null) {
-//            try {
-//                VocabCollection collection = vocabService.getCollectionByName(collectionName);
-//                newItem.getCollections().add(collection);
-//            } catch (ResourceNotFoundException ex) {
-//                System.out.println("Unable to find collection.");
-//            }
-//        }
+
+//        EnhancedVocabItem savedItem = enhancedVocabItemRepository.save(newItem);
+        if (collectionName != null) {
+            try {
+                VocabCollection collection = vocabService.getCollectionByName(collectionName);
+                collection.addItem(newItem);
+                newItem.addCollection(collection);
+            } catch (ResourceNotFoundException ex) {
+                System.out.println("Unable to find collection.");
+            }
+        }
         return enhancedVocabItemRepository.save(newItem);
     }
 

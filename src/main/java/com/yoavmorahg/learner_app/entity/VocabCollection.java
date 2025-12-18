@@ -20,7 +20,7 @@ public class VocabCollection {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "collection_id")
     private Long id;
 
     @Column(name = "collection_name", unique = true)
@@ -33,7 +33,13 @@ public class VocabCollection {
     @Column(name = "updated_ts")
     public LocalDateTime updatedTs;
 
-    @ManyToMany(mappedBy = "collections", fetch = FetchType.LAZY)
+//    @ManyToMany(mappedBy = "collections")
+    @ManyToMany
+    @JoinTable(
+            name = "collection_item",
+            joinColumns = @JoinColumn(name = "vocab_collection_id"),
+            inverseJoinColumns = @JoinColumn(name = "vocab_item_id")
+    )
     private Set<EnhancedVocabItem> vocabItems = new HashSet<>();
 
 
@@ -77,16 +83,14 @@ public class VocabCollection {
         this.vocabItems = vocabItems;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        VocabCollection that = (VocabCollection) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(vocabItems, that.vocabItems);
+    public void addItem(EnhancedVocabItem item) {
+        this.vocabItems.add(item);
+        item.getCollections().add(this);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, vocabItems);
+    public void removerItem(EnhancedVocabItem item) {
+        this.vocabItems.remove(item);
+        item.getCollections().remove(this);
     }
+
 }

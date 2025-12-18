@@ -70,12 +70,8 @@ public class EnhancedVocabItem {
     @JsonManagedReference
     private AudioData audioData;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "vocab_collection_vocab_item",
-            joinColumns = @JoinColumn(name = "vocab_collection_id"),
-            inverseJoinColumns = @JoinColumn(name = "vocab_item_id")
-    )
+
+    @ManyToMany(mappedBy = "vocabItems")
     @JsonIgnore
     private Set<VocabCollection> collections = new HashSet<>();
 
@@ -193,16 +189,16 @@ public class EnhancedVocabItem {
         this.updatedTs = updatedTs;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        EnhancedVocabItem that = (EnhancedVocabItem) o;
-        return archived == that.archived && Objects.equals(id, that.id) && Objects.equals(enTerm, that.enTerm) && Objects.equals(ptTermMasculine, that.ptTermMasculine) && Objects.equals(ptTermFeminine, that.ptTermFeminine) && Objects.equals(termType, that.termType) && Objects.equals(verbRule, that.verbRule) && Objects.equals(gender, that.gender) && Objects.equals(notes, that.notes) && Objects.equals(audioData, that.audioData) && Objects.equals(collections, that.collections) && Objects.equals(createdTs, that.createdTs) && Objects.equals(updatedTs, that.updatedTs);
+    public void addCollection(VocabCollection collection) {
+        this.collections.add(collection);
+        collection.getVocabItems().add(this);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, enTerm, ptTermMasculine, ptTermFeminine, termType, verbRule, gender, notes, audioData, collections, archived, createdTs, updatedTs);
+    public void removeCollection(VocabCollection collection) {
+        this.collections.remove(collection);
+        collection.getVocabItems().remove(this);
     }
+
+
+
 }
